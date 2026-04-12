@@ -45,4 +45,4 @@ curl http://localhost:3000/good-evening
 
 ## License
 
-ISC
+MIT
