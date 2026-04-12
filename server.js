@@ -1,14 +1,17 @@
-const http = require('http');
+const express = require('express');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+// GET / — Preserves existing "Hello, World!" behavior
+app.get('/', (req, res) => {
+  res.send('Hello, World!\n');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// GET /good-evening — New endpoint returning "Good evening"
+app.get('/good-evening', (req, res) => {
+  res.send('Good evening');
+});
+
+app.listen(3000, () => {
+  console.log('Server running at http://127.0.0.1:3000/');
 });
