@@ -12,6 +12,10 @@ app.get('/good-evening', (req, res) => {
   res.type('text').send('Good evening');
 });
 
-app.listen(3000, () => {
-  console.log('Server running at http://127.0.0.1:3000/');
-});
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log('Server running at http://127.0.0.1:3000/');
+  });
+}
+
+module.exports = app;
