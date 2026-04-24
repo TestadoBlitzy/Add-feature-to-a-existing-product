@@ -43,6 +43,22 @@ curl http://localhost:3000/good-evening
 # Good evening
 ```
 
+### Running Tests
+
+The project uses [Jest](https://jestjs.io/) and [Supertest](https://github.com/ladjs/supertest) for automated HTTP testing. After installing dependencies, execute the test suite:
+
+```bash
+npm test
+```
+
+Optionally, run the suite with coverage instrumentation:
+
+```bash
+npm run test:coverage
+```
+
+The test suite verifies the HTTP contract of both endpoints, the default 404 behavior for unknown routes, and the startup log emitted on port 3000.
+
 ## License
 
 MIT
